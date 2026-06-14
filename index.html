@@ -5,52 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>КрымНАШ — Супер-апп полуострова</title>
     <style>
-    body { 
-        margin: 0; 
-        height: 100vh; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        /* Мы используем надежную ссылку на вид Севастополя */
-       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-            url('orig.jpg') no-repeat center center fixed;
-        background-size: cover;
-        font-family: 'Segoe UI', Roboto, sans-serif;
-        color: white;
-        text-align: center;
-    }
-    .glass-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        padding: 40px;
-        border-radius: 25px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-        margin: 20px;
-    }
-    h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; text-transform: uppercase; font-weight: 800; }
-    h1 span { color: #ffcc00; }
-    p { font-size: 1.2rem; margin-top: 15px; opacity: 0.9; }
-</style>
+        body { 
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            /* Сдвигаем содержимое вправо */
+            justify-content: flex-end; 
+            align-items: center; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('orig.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             padding: 50px;
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            max-width: 80%;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            /* Отступ справа, чтобы не прилипало к краю */
+            margin-right: 10%; 
+            max-width: 450px;
+            text-align: center;
+            /* Анимация появления */
+            animation: fadeInRight 1.5s ease-out;
         }
-        h1 { font-size: clamp(3rem, 10vw, 5rem); margin: 0; letter-spacing: 2px; text-transform: uppercase; }
-        h1 span { color: #ffcc00; } /* Цвет для части НАШ */
-        p { font-size: 1.5rem; margin-top: 20px; font-weight: 300; }
+
+        h1 { 
+            font-size: clamp(2.5rem, 6vw, 4rem); 
+            margin: 0; 
+            text-transform: uppercase; 
+            font-weight: 800; 
+            letter-spacing: 2px;
+        }
+
+        h1 span { color: #ffcc00; }
+
+        p { 
+            font-size: 1.2rem; 
+            margin-top: 20px; 
+            opacity: 0.9; 
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Адаптация для мобилок: на телефоне будет по центру */
+        @media (max-width: 768px) {
+            body { justify-content: center; }
+            .glass-card { margin-right: 0; padding: 30px; }
+        }
     </style>
 </head>
 <body>
     <div class="glass-card">
         <h1>Крым<span>НАШ</span></h1>
-        <p>Главный супер-апп полуострова. Скоро здесь будет всё!</p>
+        <p>Главный супер-апп полуострова.<br>Скоро здесь будет всё!</p>
     </div>
 </body>
 </html>
