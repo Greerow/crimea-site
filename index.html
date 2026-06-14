@@ -2,18 +2,40 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>CRIMEANASH — Скоро открытие</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КрымНАШ — Супер-апп полуострова</title>
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #f0f2f5; text-align: center; }
-        .card { background: white; padding: 50px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h1 { color: #007bff; font-size: 3rem; margin-bottom: 10px; }
-        p { color: #555; font-size: 1.2rem; }
+        body { 
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://unsplash.com') no-repeat center center fixed; 
+            background-size: cover;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            max-width: 80%;
+        }
+        h1 { font-size: clamp(3rem, 10vw, 5rem); margin: 0; letter-spacing: 2px; text-transform: uppercase; }
+        h1 span { color: #ffcc00; } /* Цвет для части НАШ */
+        p { font-size: 1.5rem; margin-top: 20px; font-weight: 300; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>CRIMEANASH</h1>
-        <p>Наш супер-апп уже в пути. Скоро здесь будет всё!</p>
+    <div class="glass-card">
+        <h1>Крым<span>НАШ</span></h1>
+        <p>Главный супер-апп полуострова. Скоро здесь будет всё!</p>
     </div>
 </body>
 </html>
