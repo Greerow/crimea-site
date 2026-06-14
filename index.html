@@ -19,6 +19,23 @@
             color: white;
             overflow: hidden;
         }
+        .tg-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .tg-button:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+        
 
         .glass-card {
             background: rgba(255, 255, 255, 0.1);
@@ -68,8 +85,12 @@
 </head>
 <body>
     <div class="glass-card">
-        <h1>Крым<span>НАШ</span></h1>
-        <p>Главный супер-апп полуострова.<br>Скоро здесь будет всё!</p>
-    </div>
+    <h1>Крым<span>НАШ</span></h1>
+    <p>Главный супер-апп полуострова.<br>Скоро здесь будет всё!</p>
+    <a href="https://t.me" class="tg-button" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; vertical-align: middle;"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        Написать нам
+    </a>
+</div>
 </body>
 </html>
