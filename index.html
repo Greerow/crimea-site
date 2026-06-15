@@ -81,6 +81,38 @@
             body { justify-content: center; }
             .glass-card { margin-right: 0; padding: 30px; }
         }
+                /* Стили для сетки сервисов */
+        .superapp-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 25px;
+        }
+        .app-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 5px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .app-item:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
+        .app-item span { font-size: 1.8rem; display: block; margin-bottom: 5px; }
+        .app-item p { font-size: 0.7rem; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Стили для блока Афиши */
+        .afisha-card {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(45deg, rgba(255, 204, 0, 0.2), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            border: 1px dashed rgba(255, 204, 0, 0.5);
+            text-align: center;
+        }
+        .afisha-card h3 { margin: 0; color: #ffcc00; font-size: 1.2rem; }
+        .afisha-card p { font-size: 0.9rem; margin: 10px 0; opacity: 0.8; }
+        .afisha-link { color: white; text-decoration: underline; font-weight: bold; font-size: 0.9rem; }
+        
     </style>
 </head>
 <body>
@@ -91,6 +123,21 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; vertical-align: middle;"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
         Написать нам
     </a>
+                <!-- Карусель-магазин -->
+        <div class="superapp-grid">
+            <div class="app-item"><span>💊</span><p>Аптеки</p></div>
+            <div class="app-item"><span>🔌</span><p>Техника</p></div>
+            <div class="app-item"><span>🎣</span><p>Рыбалка</p></div>
+            <div class="app-item"><span>🛍️</span><p>Маркет</p></div>
+        </div>
+
+        <!-- Отдельный блок Афиши -->
+        <div class="afisha-card">
+            <h3>🎭 АФИША КРЫМА</h3>
+            <p>Кино, концерты и фестивали твоего города</p>
+            <a href="#" class="afisha-link">Смотреть события</a>
+        </div>
+        
 </div>
 </body>
 </html>
