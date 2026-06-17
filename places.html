@@ -3,117 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Где поесть в Крыму</title>
+    <title>Еда и Рестораны</title>
     <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a, #1e1b4b);
-            --glass-bg: rgba(255, 255, 255, 0.07);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-main: #f8fafc;
-            --accent: #6366f1;
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-main);
+            color: #f8fafc;
             margin: 0;
             padding: 20px;
             min-height: 100vh;
+            /* Качественный фоновый снимок Ласточкиного гнезда с легким затемнением для читаемости */
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(30, 27, 75, 0.7)), 
+                        url('https://unsplash.com') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 500px;
             margin: 0 auto;
+            padding-top: 10px;
         }
 
-        h1, h2 {
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        /* Кнопка возврата назад */
+        .back-btn {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-weight: 500;
         }
 
-        /* Кнопки выбора городов */
+        /* Выбор городов — круглые кнопки без лишнего текста сверху */
         .city-selector {
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
         .city-btn {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
-            padding: 12px 24px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 12px 22px;
+            border-radius: 25px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 14px;
+            transition: all 0.2s ease;
             backdrop-filter: blur(10px);
         }
 
-        .city-btn:hover, .city-btn.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-            transform: translateY(-2px);
+        .city-btn.active {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
-        /* Списки заведений */
+        /* Списки ресторанов */
         .places-container {
-            display: none; /* По умолчанию скрыты */
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .places-container.active {
-            display: grid; /* Показываем только выбранный город */
+            display: flex;
         }
 
+        /* Карточки в стиле супераппа */
         .place-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
             padding: 20px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease;
-        }
-
-        .place-card:hover {
-            transform: scale(1.02);
+            gap: 15px;
         }
 
         .place-card h3 {
-            margin: 0 0 10px 0;
-            color: #fff;
+            margin: 0;
+            font-size: 18px;
+            letter-spacing: 0.5px;
         }
 
         .place-card p {
             font-size: 14px;
             color: #cbd5e1;
-            margin: 0 0 20px 0;
+            margin: 0;
             line-height: 1.4;
         }
 
+        /* Ссылка на сайт заведения */
         .site-link {
-            display: inline-block;
+            display: block;
             text-align: center;
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
             text-decoration: none;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 15px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: background 0.2s;
-            border: 1px solid var(--glass-border);
         }
 
-        .site-link:hover {
+        .site-link:active {
             background: rgba(255, 255, 255, 0.2);
         }
     </style>
@@ -121,17 +120,17 @@
 <body>
 
 <div class="container">
-    <h1>🍽️ РЕСТОРАНЫ И КАФЕ КРЫМА</h1>
+    <!-- Кнопка возврата -->
+    <a href="index.html" class="back-btn">← Назад</a>
     
-    <!-- Шаг 1: Выбор города -->
+    <!-- Шаг 1: Сразу выбор городов (без заголовков) -->
     <div class="city-selector">
         <button class="city-btn active" onclick="showCity('sevastopol')">Севастополь</button>
         <button class="city-btn" onclick="showCity('simferopol')">Симферополь</button>
         <button class="city-btn" onclick="showCity('yalta')">Ялта</button>
     </div>
 
-    <!-- Шаг 2: Списки ресторанов для каждого города -->
-    
+    <!-- Шаг 2: Списки ресторанов -->
     <!-- СЕВАСТОПОЛЬ -->
     <div id="sevastopol" class="places-container active">
         <div class="place-card">
@@ -140,13 +139,6 @@
                 <p>Рыбный ресторан со свежим уловом Черного моря прямо на набережной.</p>
             </div>
             <a href="https://barkas-rest.ru" target="_blank" class="site-link">Перейти на сайт</a>
-        </div>
-        <div class="place-card">
-            <div>
-                <h3>Остров</h3>
-                <p>Ресторан местной фермерской кухни и эко-продуктов.</p>
-            </div>
-            <a href="https://ostrov-sevastopol.ru" target="_blank" class="site-link">Перейти на сайт</a>
         </div>
     </div>
 
@@ -158,13 +150,6 @@
                 <p>Изысканная кухня, панорамный вид на город и высокий уровень сервиса.</p>
             </div>
             <a href="https://simfero-rest.ru" target="_blank" class="site-link">Перейти на сайт</a>
-        </div>
-        <div class="place-card">
-            <div>
-                <h3>Чистые Пруды</h3>
-                <p>Уютное место в парковой зоне для семейного отдыха и обедов.</p>
-            </div>
-            <a href="https://prud-simf.ru" target="_blank" class="site-link">Перейти на сайт</a>
         </div>
     </div>
 
@@ -178,23 +163,14 @@
             <a href="https://costeo-yalta.ru" target="_blank" class="site-link">Перейти на сайт</a>
         </div>
     </div>
-
 </div>
 
 <script>
     function showCity(cityId) {
-        // Скрываем все списки заведений
-        document.querySelectorAll('.places-container').forEach(el => {
-            el.classList.remove('active');
-        });
-        // Убираем активный класс у всех кнопок
-        document.querySelectorAll('.city-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
+        document.querySelectorAll('.places-container').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.city-btn').forEach(btn => btn.classList.remove('active'));
         
-        // Показываем заведения выбранного города
         document.getElementById(cityId).classList.add('active');
-        // Делаем кликнутую кнопку активной
         event.currentTarget.classList.add('active');
     }
 </script>
