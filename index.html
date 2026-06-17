@@ -36,64 +36,25 @@
             background: rgba(255, 255, 255, 0.4);
             transform: scale(1.05);
         }
-        .food-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 25px;
-    margin: 20px auto;
-    max-width: 90%;
-    text-align: center;
-}
-
-.food-card h2 {
-    font-size: 20px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-/* Кнопка в стиле верхних элементов */
-.food-btn {
-    display: inline-block;
-    width: 80%;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    text-decoration: none;
-    padding: 14px 0;
-    border-radius: 30px; /* Округлая форма, как у "Написать нам" */
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
-
-.food-btn:hover, .food-btn:active {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-        
 
         .glass-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            padding: 50px;
+            padding: 40px 30px;
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-            /* Отступ справа, чтобы не прилипало к краю */
             margin-right: 0%; 
             max-width: 450px;
+            width: 100%;
+            box-sizing: border-box;
             text-align: center;
-            /* Анимация появления */
             animation: fadeInRight 1.5s ease-out;
         }
 
         h1 { 
-            font-size: clamp(2.5rem, 6vw, 4rem); 
+            font-size: clamp(2.2rem, 5vw, 3.5rem); 
             margin: 0; 
             text-transform: uppercase; 
             font-weight: 800; 
@@ -103,8 +64,8 @@
         h1 span { color: #ffcc00; }
 
         p { 
-            font-size: 1.2rem; 
-            margin-top: 20px; 
+            font-size: 1.1rem; 
+            margin-top: 15px; 
             opacity: 0.9; 
             line-height: 1.4;
             font-weight: 300;
@@ -115,12 +76,13 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        /* Адаптация для мобилок: на телефоне будет по центру */
+        /* Адаптация для мобилок */
         @media (max-width: 768px) {
-            body { justify-content: center; }
-            .glass-card { margin-right: 0; padding: 30px; }
+            body { justify-content: center; padding: 10px; }
+            .glass-card { margin-right: 0; padding: 25px 20px; }
         }
-                /* Стили для сетки сервисов */
+
+        /* Сетка сервисов */
         .superapp-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -134,62 +96,63 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.3s;
             cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: block;
         }
         .app-item:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
         .app-item span { font-size: 1.8rem; display: block; margin-bottom: 5px; }
         .app-item p { font-size: 0.7rem; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Стили для блока Афиши */
+        /* Стильный блок Афиши (компактный, на всю ширину под иконками) */
         .afisha-card {
-            margin-top: 25px;
-            padding: 20px;
-            background: linear-gradient(45deg, rgba(255, 204, 0, 0.2), rgba(255, 255, 255, 0.05));
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(45deg, rgba(255, 204, 0, 0.15), rgba(255, 255, 255, 0.03));
             border-radius: 20px;
-            border: 1px dashed rgba(255, 204, 0, 0.5);
+            border: 1px dashed rgba(255, 204, 0, 0.4);
             text-align: center;
         }
-        .afisha-card h3 { margin: 0; color: #ffcc00; font-size: 1.2rem; }
-        .afisha-card p { font-size: 0.9rem; margin: 10px 0; opacity: 0.8; }
-        .afisha-link { color: white; text-decoration: underline; font-weight: bold; font-size: 0.9rem; }
+        .afisha-card h3 { margin: 0 0 5px 0; color: #ffcc00; font-size: 1.1rem; letter-spacing: 0.5px; }
+        .afisha-card p { font-size: 0.8rem; margin: 0 0 10px 0; opacity: 0.8; }
+        .afisha-link { color: white; text-decoration: underline; font-weight: bold; font-size: 0.85rem; }
         
     </style>
 </head>
 <body>
     <div class="glass-card">
-    <h1>Крым<span>НАШ</span></h1>
-    <p>Главный супер-апп полуострова.<br>Скоро здесь будет всё!</p>
-    <a href="https://t.me/greerow" class="tg-button" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; vertical-align: middle;"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-        Написать нам
-    </a>
-                <!-- Карусель-магазин -->
+        <h1>Крым<span>НАШ</span></h1>
+        <p>Главный супер-апп полуострова.<br>Скоро здесь будет всё!</p>
+        
+        <a href="https://t.me/greerow" class="tg-button" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; vertical-align: middle;"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            Написать нам
+        </a>
+        
+        <!-- Сетка иконок -->
         <div class="superapp-grid">
-            <a href="https://dhwnh.com/g/vhr1ruamas43db3f7229af67a6436f/?erid=25H8d7vbP8SRTvH4QRy47F" target="_blank" class="app-item" style="text-decoration: none; color: white;">
-    <span>💊</span>
-    <p>Аптеки</p>
-</a>
-
-
+            <!-- Первый ряд -->
+            <a href="https://dhwnh.com/g/vhr1ruamas43db3f7229af67a6436f/?erid=25H8d7vbP8SRTvH4QRy47F" target="_blank" class="app-item">
+                <span>💊</span>
+                <p>Аптеки</p>
+            </a>
             <div class="app-item"><span>🔌</span><p>Техника</p></div>
             <div class="app-item"><span>🎣</span><p>Рыбалка</p></div>
             <div class="app-item"><span>🛍️</span><p>Маркет</p></div>
-            <div class="category-card">
-    <!-- Блок Еда и Рестораны на главной -->
-<div class="food-card">
-    <h2>🍕 Еда и рестораны</h2>
-    <a href="places.html" class="food-btn">Перейти</a>
-</div>
-
-
+            
+            <!-- Второй ряд (Еда встает аккуратно в начало ряда) -->
+            <a href="places.html" class="app-item">
+                <span>🍕</span>
+                <p>Еда</p>
+            </a>
         </div>
 
-        <!-- Отдельный блок Афиши -->
+        <!-- Отдельный блок Афиши снизу -->
         <div class="afisha-card">
             <h3>🎭 АФИША КРЫМА</h3>
             <p>Кино, концерты и фестивали твоего города</p>
-            <a href="#" class="afisha-link">Смотреть события</a>
+            <a href="afisha.html" class="afisha-link">Смотреть события</a>
         </div>
-        
-</div>
+    </div>
 </body>
 </html>
