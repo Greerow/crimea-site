@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Где поесть в Крыму</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a, #1e1b4b);
+            --glass-bg: rgba(255, 255, 255, 0.07);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --accent: #6366f1;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Кнопки выбора городов */
+        .city-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .city-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .city-btn:hover, .city-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Списки заведений */
+        .places-container {
+            display: none; /* По умолчанию скрыты */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .places-container.active {
+            display: grid; /* Показываем только выбранный город */
+        }
+
+        .place-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .place-card:hover {
+            transform: scale(1.02);
+        }
+
+        .place-card h3 {
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+
+        .place-card p {
+            font-size: 14px;
+            color: #cbd5e1;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        .site-link {
+            display: inline-block;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+            border: 1px solid var(--glass-border);
+        }
+
+        .site-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🍽️ РЕСТОРАНЫ И КАФЕ КРЫМА</h1>
+    
+    <!-- Шаг 1: Выбор города -->
+    <div class="city-selector">
+        <button class="city-btn active" onclick="showCity('sevastopol')">Севастополь</button>
+        <button class="city-btn" onclick="showCity('simferopol')">Симферополь</button>
+        <button class="city-btn" onclick="showCity('yalta')">Ялта</button>
+    </div>
+
+    <!-- Шаг 2: Списки ресторанов для каждого города -->
+    
+    <!-- СЕВАСТОПОЛЬ -->
+    <div id="sevastopol" class="places-container active">
+        <div class="place-card">
+            <div>
+                <h3>Баркас</h3>
+                <p>Рыбный ресторан со свежим уловом Черного моря прямо на набережной.</p>
+            </div>
+            <a href="https://barkas-rest.ru" target="_blank" class="site-link">Перейти на сайт</a>
+        </div>
+        <div class="place-card">
+            <div>
+                <h3>Остров</h3>
+                <p>Ресторан местной фермерской кухни и эко-продуктов.</p>
+            </div>
+            <a href="https://ostrov-sevastopol.ru" target="_blank" class="site-link">Перейти на сайт</a>
+        </div>
+    </div>
+
+    <!-- СИМФЕРОПОЛЬ -->
+    <div id="simferopol" class="places-container">
+        <div class="place-card">
+            <div>
+                <h3>Simfero</h3>
+                <p>Изысканная кухня, панорамный вид на город и высокий уровень сервиса.</p>
+            </div>
+            <a href="https://simfero-rest.ru" target="_blank" class="site-link">Перейти на сайт</a>
+        </div>
+        <div class="place-card">
+            <div>
+                <h3>Чистые Пруды</h3>
+                <p>Уютное место в парковой зоне для семейного отдыха и обедов.</p>
+            </div>
+            <a href="https://prud-simf.ru" target="_blank" class="site-link">Перейти на сайт</a>
+        </div>
+    </div>
+
+    <!-- ЯЛТА -->
+    <div id="yalta" class="places-container">
+        <div class="place-card">
+            <div>
+                <h3>Doctor Costeo</h3>
+                <p>Средиземноморская кухня, морепродукты и отличная терраса у моря.</p>
+            </div>
+            <a href="https://costeo-yalta.ru" target="_blank" class="site-link">Перейти на сайт</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function showCity(cityId) {
+        // Скрываем все списки заведений
+        document.querySelectorAll('.places-container').forEach(el => {
+            el.classList.remove('active');
+        });
+        // Убираем активный класс у всех кнопок
+        document.querySelectorAll('.city-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Показываем заведения выбранного города
+        document.getElementById(cityId).classList.add('active');
+        // Делаем кликнутую кнопку активной
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
