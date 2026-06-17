@@ -34,7 +34,7 @@
             font-weight: 500;
         }
 
-        /* Выбор городов — круглые кнопки без лишнего текста сверху */
+        /* Выбор городов — круглые кнопки */
         .city-selector {
             display: flex;
             justify-content: center;
@@ -97,6 +97,16 @@
             line-height: 1.4;
         }
 
+        /* Контейнер для адаптивного виджета карт */
+        .maps-widget {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
         /* Ссылка на сайт заведения */
         .site-link {
             display: block;
@@ -123,7 +133,7 @@
     <!-- Кнопка возврата -->
     <a href="index.html" class="back-btn">← Назад</a>
     
-    <!-- Шаг 1: Сразу выбор городов (без заголовков) -->
+    <!-- Шаг 1: Выбор городов -->
     <div class="city-selector">
         <button class="city-btn active" onclick="showCity('sevastopol')">Севастополь</button>
         <button class="city-btn" onclick="showCity('simferopol')">Симферополь</button>
@@ -135,10 +145,18 @@
     <div id="sevastopol" class="places-container active">
         <div class="place-card">
             <div>
-                <h3>Баркас</h3>
-                <p>Рыбный ресторан со свежим уловом Черного моря прямо на набережной.</p>
+                <h3>Кафе «Этажи»</h3>
+                <p>Многоуровневое уютное кафе в самом сердце исторического центра.</p>
             </div>
-            <a href="https://barkas-rest.ru" target="_blank" class="site-link">Перейти на сайт</a>
+            
+            <!-- Встроенный официальный темный виджет отзывов Яндекс Карт для "Этажей" -->
+            <div class="maps-widget">
+                <iframe style="width:100%; height:100%; border:none; box-sizing:border-box;" 
+                        src="https://yandex.ru">
+                </iframe>
+            </div>
+
+            <a href="https://etazhicafe.ru/" target="_blank" class="site-link">Перейти на сайт</a>
         </div>
     </div>
 
