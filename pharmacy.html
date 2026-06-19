@@ -51,24 +51,25 @@
             text-align: center;
         }
 
-       /* Обновленная плашка: маскирует и обрезает белые углы картинки */
+       /* Рамка-контейнер, которая обрезает всё лишнее */
         .logo-badge {
             width: 100%;
-            height: 120px; /* Немного увеличили высоту под пропорции твоей картинки */
-            border-radius: 16px;
+            height: 150px; /* Фиксированная высота, идеальная для мобилок и ПК */
+            border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            overflow: hidden; /* ✂️ ВОТ ЭТО СВОЙСТВО ОБРЕЖЕТ БЕЛЫЙ ФОН КАРТИНКИ */
+            overflow: hidden; /* Железно режет всё, что выходит за рамку */
+            background: transparent; /* Никаких лишних подложек */
         }
 
-        /* Стиль конкретно для этой полной картинки */
+        /* Сама картинка: растягивается ровно по границам рамки */
         .brand-logo-full {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Картинка полностью займет весь блок, скрыв свои углы за скруглением */
+            object-fit: cover; /* Заполняет блок без искажений */
         }
 
         .pharmacy-card h3 {
