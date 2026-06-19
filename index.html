@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="yandex-verification" content="abcbab267d4eb9e4" />
     <meta name="verify-admitad" content="43db3f7229" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>КрымНАШ — Супер-апп полуострова</title>
-   
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109999033', 'ym');
 
-    ym(109999033, 'init', {ssr:true, webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/109999033" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < e.length; j++) {if (e[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t),k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://yandex.ru", "ym");
+
+       ym(109999033, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://yandex.ru" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <style>
         body { 
             margin: 0; 
-            height: 100vh; 
+            min-height: 100vh; 
             display: flex; 
-            /* Сдвигаем содержимое вправо */
-            justify-content: flex-end; 
+            justify-content: center; 
             align-items: center; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                         url('orig.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Segoe UI', Roboto, sans-serif;
             color: white;
-            overflow: hidden;
+            padding: 20px;
+            box-sizing: border-box;
         }
+
         .tg-button {
             display: inline-block;
             margin-top: 25px;
@@ -52,20 +57,20 @@
             transform: scale(1.05);
         }
 
+        /* Главный контейнер-стекло */
         .glass-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            padding: 40px 30px;
+            padding: 30px 20px;
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-            margin-right: 0%; 
-            max-width: 450px;
             width: 100%;
+            max-width: 450px; /* По умолчанию под мобилки */
             box-sizing: border-box;
             text-align: center;
-            animation: fadeInRight 1.5s ease-out;
+            animation: fadeInRight 1.2s ease-out;
         }
 
         h1 { 
@@ -86,17 +91,6 @@
             font-weight: 300;
         }
 
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        /* Адаптация для мобилок */
-        @media (max-width: 768px) {
-            body { justify-content: center; padding: 10px; }
-            .glass-card { margin-right: 0; padding: 25px 20px; }
-        }
-
         /* Сетка сервисов */
         .superapp-grid {
             display: grid;
@@ -104,6 +98,7 @@
             gap: 10px;
             margin-top: 25px;
         }
+
         .app-item {
             background: rgba(255, 255, 255, 0.1);
             padding: 15px 5px;
@@ -119,7 +114,7 @@
         .app-item span { font-size: 1.8rem; display: block; margin-bottom: 5px; }
         .app-item p { font-size: 0.7rem; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Стильный блок Афиши (компактный, на всю ширину под иконками) */
+        /* Блок Афиши */
         .afisha-card {
             margin-top: 20px;
             padding: 15px;
@@ -131,43 +126,116 @@
         .afisha-card h3 { margin: 0 0 5px 0; color: #ffcc00; font-size: 1.1rem; letter-spacing: 0.5px; }
         .afisha-card p { font-size: 0.8rem; margin: 0 0 10px 0; opacity: 0.8; }
         .afisha-link { color: white; text-decoration: underline; font-weight: bold; font-size: 0.85rem; }
-        
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* 🔥 МАГИЯ ДЕСКТOПА: Настройки для больших экранов (мониторов и планшетов) */
+        @media (min-width: 900px) {
+            body {
+                justify-content: center;
+                padding: 40px;
+            }
+            
+            /* Превращаем карточку в широкий полноценный дашборд */
+            .glass-card {
+                max-width: 1100px;
+                padding: 50px;
+                display: grid;
+                /* Делим экран: 40% левая колонка с инфо, 60% правая с кнопками */
+                grid-template-columns: 4fr 6fr;
+                gap: 40px;
+                text-align: left;
+                align-items: center;
+            }
+
+            /* Левая колонка (Инфо и кнопка) */
+            .brand-section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            /* Правая колонка (Все блоки и кнопки вместе) */
+            .apps-section {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            /* На мониторе сетка кнопок становится больше (по 5 в ряд) и просторнее */
+            .superapp-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+                margin-top: 0;
+            }
+
+            .app-item {
+                padding: 25px 10px;
+                border-radius: 20px;
+            }
+            .app-item span { font-size: 2.3rem; }
+            .app-item p { font-size: 0.8rem; }
+
+            .afisha-card {
+                margin-top: 0;
+                padding: 25px;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .afisha-card div { max-width: 70%; }
+            .afisha-card p { margin-bottom: 0; }
+        }
     </style>
 </head>
 <body>
     <div class="glass-card">
-        <h1>Крым<span>НАШ</span></h1>
-        <p>Главный супер-апп полуострова.<br>Скоро здесь будет всё!</p>
         
-        <a href="https://t.me/greerow" class="tg-button" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; vertical-align: middle;"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-            Написать нам
-        </a>
-        
-        <!-- Сетка иконок -->
-        <div class="superapp-grid">
-            <!-- Первый ряд -->
-            <a href="https://dhwnh.com/g/vhr1ruamas43db3f7229af67a6436f/?erid=25H8d7vbP8SRTvH4QRy47F" target="_blank" class="app-item">
-                <span>💊</span>
-                <p>Аптеки</p>
-            </a>
-            <div class="app-item"><span>🔌</span><p>Техника</p></div>
-            <div class="app-item"><span>🎣</span><p>Рыбалка</p></div>
-            <div class="app-item"><span>🛍️</span><p>Маркет</p></div>
+        <!-- Левая секция (на ПК слева, на мобилке сверху) -->
+        <div class="brand-section">
+            <h1>Крым<span>НАШ</span></h1>
+            <p>Главный супер-апп полуострова.<br>Скоро здесь будет всё!</p>
             
-            <!-- Второй ряд (Еда встает аккуратно в начало ряда) -->
-            <a href="places.html" class="app-item">
-                <span>🍕</span>
-                <p>Еда</p>
+            <a href="https://t.me" class="tg-button" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; vertical-align: middle;"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                Написать нам
             </a>
+        </div>
+        
+        <!-- Правая секция с кнопками (на ПК справа, на мобилке снизу) -->
+        <div class="apps-section">
+            <!-- Сетка иконок -->
+            <div class="superapp-grid">
+                <a href="https://dhwnh.com" target="_blank" class="app-item">
+                    <span>💊</span>
+                    <p>Аптеки</p>
+                </a>
+                <div class="app-item"><span>🔌</span><p>Техника</p></div>
+                <div class="app-item"><span>🎣</span><p>Рыбалка</p></div>
+                <div class="app-item"><span>🛍️</span><p>Маркет</p></div>
+                
+                <a href="places.html" class="app-item">
+                    <span>🍕</span>
+                    <p>Еда</p>
+                </a>
+                
+                <!-- 💡 СЮДА ТЫ МОЖЕШЬ ДОБАВЛЯТЬ ЕЩЕ ХОТЬ 20 КНОПОК, НА ПК ОНИ КРАСИВО ЗАПОЛНЯТ ПРОСТРАНСТВО -->
+            </div>
+
+            <!-- Блок Афиши -->
+            <div class="afisha-card">
+                <div>
+                    <h3>🎭 АФИША КРЫМА</h3>
+                    <p>Кино, концерты и фестивали твоего города</p>
+                </div>
+                <a href="afisha.html" class="afisha-link">Смотреть события</a>
+            </div>
         </div>
 
-        <!-- Отдельный блок Афиши снизу -->
-        <div class="afisha-card">
-            <h3>🎭 АФИША КРЫМА</h3>
-            <p>Кино, концерты и фестивали твоего города</p>
-            <a href="afisha.html" class="afisha-link">Смотреть события</a>
-        </div>
     </div>
 </body>
 </html>
